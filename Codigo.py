@@ -1,3 +1,4 @@
+import sys
 class Prograteo:
     
     def __init__(self,materiaPrimaIndirecta,manoDeobraIndirecta,renta,energiaElectrica,agua,telefono,seguroDeEdificio,depreciacionDeMaquinaria,seguroDeMaquinaria):
@@ -500,22 +501,34 @@ class Prograteo:
             print(f"Mantenimineto : {Z}")
             print(f"TOTAL : {SUMATORIAFINAL}")
 
+
 contador=0        
 opcion=1
-while opcion==1:
-    contador=contador+1
-    materiaPrimaIndirecta=float(input("Dime el monto de la Materia prima Indirecta : "))
-    manoDeobraIndirecta=float(input("Dime el monto de la Mano de obra indirecta : "))
-    renta=float(input("Dime tu monto de la renta : "))
-    energiaElectrica=float(input("Dime tu monto de la Energia Electrica : "))
-    agua=float(input("Dime tu monto del agua : "))
-    telefono=float(input("Dime tu monto del telefono : "))
-    seguroDeEdificio=float(input("Dime tu monto del Seguro de Edificio : "))
-    depreciacionDeMaquinaria=float(input("Dime tu monto de la Depreciacion de Maquinaria : "))
-    seguroDeMaquinaria=float(input("Dime tu monto del Seguro de Maquinaria : "))
+try:
+        while opcion==1:
+                contador=contador+1
+                materiaPrimaIndirecta=float(input("Dime el monto de la Materia prima Indirecta : "))
+                manoDeobraIndirecta=float(input("Dime el monto de la Mano de obra indirecta : "))
+                renta=float(input("Dime tu monto de la renta : "))
+                energiaElectrica=float(input("Dime tu monto de la Energia Electrica : "))
+                agua=float(input("Dime tu monto del agua : "))
+                telefono=float(input("Dime tu monto del telefono : "))
+                seguroDeEdificio=float(input("Dime tu monto del Seguro de Edificio : "))
+                depreciacionDeMaquinaria=float(input("Dime tu monto de la Depreciacion de Maquinaria : "))
+                seguroDeMaquinaria=float(input("Dime tu monto del Seguro de Maquinaria : "))
     
-    a=Prograteo(materiaPrimaIndirecta,manoDeobraIndirecta,renta,energiaElectrica,agua,telefono,seguroDeEdificio,depreciacionDeMaquinaria,seguroDeMaquinaria)
-    a.CalcularPrograteo1()
-    print(f"Numeros de personas Registradas:{contador}")
-    print("-"*100)
-    opcion=int(input("Deseas seguir sacando Prograteos 1=SI 2=NO  : "))
+        a=Prograteo(materiaPrimaIndirecta,manoDeobraIndirecta,renta,energiaElectrica,agua,telefono,seguroDeEdificio,depreciacionDeMaquinaria,seguroDeMaquinaria)
+        a.CalcularPrograteo1()
+        print(f"Numeros de personas Registradas:{contador}")
+        print("-"*100)
+        opcion=int(input("Deseas seguir sacando Prograteos 1=SI 2=NO  : "))
+
+except:
+    print("*"*30)
+    print(f"Ocurrió un problema {sys.exc_info()[0]}")
+    print(f"Ocurrió un problema {sys.exc_info()[1]}")
+    print("Intenta respetar lo que se te pide :) ")
+    print("*"*30)
+    
+finally:
+    print("*"*30,"Fin del Programa","*"*30)
