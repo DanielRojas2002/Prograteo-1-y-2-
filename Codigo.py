@@ -1,4 +1,5 @@
 import sys
+import matplotlib.pyplot as plt 
 class Prograteo:
     
     def __init__(self,materiaPrimaIndirecta,manoDeobraIndirecta,renta,energiaElectrica,agua,telefono,seguroDeEdificio,depreciacionDeMaquinaria,seguroDeMaquinaria):
@@ -139,6 +140,19 @@ class Prograteo:
         print(f"Este es tu factor del Seguro de Edificio :{FactorSeguroE}")
         print(f"Este es tu factor del Depreciacion de Maquinaria :{FactorDepreciacionM}")
         print(f"Este es tu factor del Seguro de Maquinaria :{FactorSeguroM}")
+        datos=["FactorMPD","FactorMOD","FactorSeguroE","FactorDepreciacion","FactorSeguroM"]
+        valores1=[FactorMPD,FactorMOD,FactorSeguroE,FactorDepreciacionM,FactorSeguroM]
+        colores=["green","red","blue","purple","orange"]
+        plt.bar(datos,height=valores1,color=colores,width=0.5)
+        plt.title("FACTORES")
+        plt.show()
+
+        datos2=["FactorRenta","FactorEnergia","FactorAgua","FactorTelefono"]
+        valores2=[FactorRenta,FactorEnergia,FactorAgua,FactorTelefono]
+        colores2=["yellow","brown","black","pink"]
+        plt.bar(datos2,height=valores2,color=colores2,width=0.5)
+        plt.title("FACTORES")
+        plt.show()
         print("-"*100)
         
         #Estas son las variables donde se guardan las respuestas del productivo 1
@@ -504,6 +518,7 @@ class Prograteo:
 
 contador=0        
 opcion=1
+
 try:
         while opcion==1:
                 contador=contador+1
@@ -516,12 +531,11 @@ try:
                 seguroDeEdificio=float(input("Dime tu monto del Seguro de Edificio : "))
                 depreciacionDeMaquinaria=float(input("Dime tu monto de la Depreciacion de Maquinaria : "))
                 seguroDeMaquinaria=float(input("Dime tu monto del Seguro de Maquinaria : "))
-    
-        a=Prograteo(materiaPrimaIndirecta,manoDeobraIndirecta,renta,energiaElectrica,agua,telefono,seguroDeEdificio,depreciacionDeMaquinaria,seguroDeMaquinaria)
-        a.CalcularPrograteo1()
-        print(f"Numeros de personas Registradas:{contador}")
-        print("-"*100)
-        opcion=int(input("Deseas seguir sacando Prograteos 1=SI 2=NO  : "))
+                a=Prograteo(materiaPrimaIndirecta,manoDeobraIndirecta,renta,energiaElectrica,agua,telefono,seguroDeEdificio,depreciacionDeMaquinaria,seguroDeMaquinaria)
+                a.CalcularPrograteo1()
+                print(f"Numeros de personas Registradas:{contador}")
+                print("-"*100)
+                opcion=int(input("Deseas seguir sacando Prograteos 1=SI 2=NO  : "))
 
 except:
     print("*"*30)
