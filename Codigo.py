@@ -341,7 +341,7 @@ class Prograteo:
         VALORES=[sumatoriaP1,sumatoriaP2,sumatoriaP3,sumatoriaP4,sumatoriaAM,sumatoriaAL,sumatoriaAM]
         COLORES=["red","green","blue","orange","yellow","purple","pink"]
         plt.bar(DATOS,height=VALORES,color=COLORES,width=0.5)
-        plt.title("Total de Departamnetos del PROGRATEO 1")
+        plt.title("TOTAL DE LOS DEPARTAMENTOS EN EL  PROGRATEO 1")
         plt.show()
         
         
@@ -517,6 +517,22 @@ class Prograteo:
             print(f"Aseo y Limpieza : {Y}")
             print(f"Mantenimineto : {Z}")
             print(f"TOTAL : {SUMATORIAFINAL}")
+
+            datos1=["PRODUCTIVO1","PRODUCTIVO2","PRODCUTIVO3","PRODUCTIVO4"]
+            valores1=[TOTALFINALP1,TOTALFINALP2,TOTALFINALP3,TOTALFINALP4]
+            colores1=["red","blue","green","orange"]
+            plt.bar(datos1,height=valores1,color=colores1,width=0.5)
+            plt.title("TOTAL DE LOS DEPARTAMENTOS EN EL PROGRATEO 2")
+            plt.show()
+
+        if SUMATORIAFINAL==VariableSumatoria:
+                datos2=["TOTAL DE MONTO","TOTAL DEL PROGRATEO 2"]
+                valores2=[VariableSumatoria,SUMATORIAFINAL]
+                colores2=["red","blue"]
+                plt.bar(datos2,height=valores2,color=colores2,width=0.5)
+                plt.title("VERIFICACION SI SON IGUALES ESTA BIEN HECHO LOS PROGRATEOS :)")
+                plt.show()
+
 
 
 contador=0        
