@@ -140,20 +140,8 @@ class Prograteo:
         print(f"Este es tu factor del Seguro de Edificio :{FactorSeguroE}")
         print(f"Este es tu factor del Depreciacion de Maquinaria :{FactorDepreciacionM}")
         print(f"Este es tu factor del Seguro de Maquinaria :{FactorSeguroM}")
-        datos=["FactorMPD","FactorMOD","FactorSeguroE","FactorDepreciacion","FactorSeguroM"]
-        valores1=[FactorMPD,FactorMOD,FactorSeguroE,FactorDepreciacionM,FactorSeguroM]
-        colores=["green","red","blue","purple","orange"]
-        plt.bar(datos,height=valores1,color=colores,width=0.5)
-        plt.title("FACTORES")
-        plt.show()
-
-        datos2=["FactorRenta","FactorEnergia","FactorAgua","FactorTelefono"]
-        valores2=[FactorRenta,FactorEnergia,FactorAgua,FactorTelefono]
-        colores2=["yellow","brown","black","pink"]
-        plt.bar(datos2,height=valores2,color=colores2,width=0.5)
-        plt.title("FACTORES")
-        plt.show()
         print("-"*100)
+        print("*"*30,"RESPUESTAS","*"*30)
         
         #Estas son las variables donde se guardan las respuestas del productivo 1
         RespuestaP1PI=(FactorMPD*MPDP1)
@@ -165,6 +153,9 @@ class Prograteo:
         RespuestaP1SE=(FactorSeguroE*M2P1)
         RespuestaP1DM=(FactorDepreciacionM*VMP1)
         RespuestaP1SM=(FactorSeguroM*VMP1)
+        
+
+
         
         #Estas son las variables donde se guardan las respuestas del productivo 2
         RespuestaP2PI=(FactorMPD*MPDP2)
@@ -346,6 +337,12 @@ class Prograteo:
         sumatoriaAL=(RespuestaALPI+RespuestaALOI+RespuestaALR+RespuestaALEE+RespuestaALA+RespuestaALT+RespuestaALSE+RespuestaALDM+RespuestaALSM)
         sumatoriaM=(RespuestaMPI+RespuestaMOI+RespuestaMR+RespuestaMEE+RespuestaMA+RespuestaMT+RespuestaMSE+RespuestaMDM+RespuestaMSM)
         sumatoriaTotal=(sumatoriaP1+sumatoriaP2+sumatoriaP3+sumatoriaP4+sumatoriaAM+sumatoriaAL+sumatoriaM)
+        DATOS=["PRODUCCION1","PRODUCCION2","PRODUCCION3","PRODUCCION4","ALMACEN","ASEO","MANTENIMIENTO"]
+        VALORES=[sumatoriaP1,sumatoriaP2,sumatoriaP3,sumatoriaP4,sumatoriaAM,sumatoriaAL,sumatoriaAM]
+        COLORES=["red","green","blue","orange","yellow","purple","pink"]
+        plt.bar(DATOS,height=VALORES,color=COLORES,width=0.5)
+        plt.title("Total de Departamnetos del PROGRATEO 1")
+        plt.show()
         
         
         
@@ -356,9 +353,15 @@ class Prograteo:
         
 #         If de comprobacion si son iguales ambos esta bien 
         if VariableSumatoria==variable:
-            print ("Tu prograteo es correcto ")
+                print ("Tu prograteo es correcto ")
+                datos=["TOTAL DEPARTAMENTOS","TOTAL DE MONTO "]
+                valores=[VariableSumatoria,variable]
+                colores=["blue","red"]
+                plt.bar(datos,height=valores,color=colores,width=0.5)
+                plt.title("Verificacion")
+                plt.show()
         else:
-            print("Anotaste mal un dato ")
+                print("Anotaste mal un dato ")
             
 #         Inicializador para poder hacer el PROGRATEO 2
         print("-"*100)
